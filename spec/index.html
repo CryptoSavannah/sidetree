@@ -7,12 +7,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
             <title>DIF Sidetree Protocol</title>
-            <link href="../spec-up/css/custom-elements.css" rel="stylesheet">
-            <link href="../spec-up/css/prism.css" rel="stylesheet">
-            <link href="../spec-up/css/chart.css" rel="stylesheet">
-            <link href="../spec-up/css/font-awesome.css" rel="stylesheet">
-            <link href="../spec-up/css/index.css" rel="stylesheet">
-            <script src="../spec-up/js/custom-elements.js"></script>
+            <link href="../spec-up/compiled/head.css" rel="stylesheet"/>
+                <script src="../spec-up/compiled/head.js"></script>
           </head>
           <body features="source logo">
             
@@ -579,7 +575,7 @@
 <li>Generate a key pair using the defined <a href="#key-algorithm"><code>KEY_ALGORITHM</code></a>, let this be known as the <a href="#operation-key-pair">operation key pair</a>.</li>
 <li>Generate a <a href="#public-key-commitment">public key commitment</a> using the defined <a href="#public-key-commitment-scheme">public key commitment scheme</a> and public key of the generated <a href="#operation-key-pair">operation key pair</a>, let this resulting commitment be known as the <a href="#update-commitment">update commitment</a>.</li>
 <li>Generate an encoded representation of the following object using the implementation’s <a href="#data-encoding-scheme"><code>DATA_ENCODING_SCHEME</code></a>, herein referred to as the <a href="#create-delta-object" id="create-delta-object"><em>Create Operation Delta Object</em></a>:<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"patches"</span><span class="token operator">:</span> <span class="token punctuation">[</span> PATCH_<span class="token number">1</span><span class="token punctuation">,</span> PATCH_<span class="token number">2</span><span class="token punctuation">,</span> ... <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"patches"</span><span class="token operator">:</span> <span class="token punctuation">[</span> PATCH_1<span class="token punctuation">,</span> PATCH_2<span class="token punctuation">,</span> ... <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token property">"update_commitment"</span><span class="token operator">:</span> Update Operation Commitment
 <span class="token punctuation">}</span>
 </code></pre>
@@ -610,7 +606,7 @@
 <ol>
 <li>Retrieve the <em>Update Reveal Value</em> that matches the previously anchored <em>Update Commitment</em>.</li>
 <li>Generate an encoded representation of the following object using the implementation’s <a href="#data-encoding-scheme"><code>DATA_ENCODING_SCHEME</code></a>, herein referred to as the <a href="#update-delta-object" id="update-delta-object"><em>Update Operation Delta Object</em></a>, composed as follows:<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"patches"</span><span class="token operator">:</span> <span class="token punctuation">[</span> PATCH_<span class="token number">1</span><span class="token punctuation">,</span> PATCH_<span class="token number">2</span><span class="token punctuation">,</span> ... <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"patches"</span><span class="token operator">:</span> <span class="token punctuation">[</span> PATCH_1<span class="token punctuation">,</span> PATCH_2<span class="token punctuation">,</span> ... <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token property">"update_commitment"</span><span class="token operator">:</span> Update Operation Commitment
 <span class="token punctuation">}</span>
 </code></pre>
@@ -645,7 +641,7 @@
 <li>Generate and retain a <a href="#commitment-value"><code>COMMITMENT_VALUE</code></a>, in adherence with the <a href="#commitment-value-generation">Commitment Value Generation</a> directives, for use in the next Update operation, herein referred to as the <em>Update Reveal Value</em>.</li>
 <li>Generate an <em>Update Commitment</em> using the <a href="#hashing-process">Hashing Process</a>, in adherence with the <a href="#commitment-value-generation">Commitment Value Generation</a> directives, to generate a hash of the <em>Update Reveal Value</em>, and retain the resulting hash value for inclusion in an <a href="#anchor-file">Anchor File</a>.</li>
 <li>Generate an encoded representation of the following object using the implementation’s [<code>DATA_ENCODING_SCHEME</code>], herein referred to as the <a href="#recover-delta-object" id="recover-delta-object"><em>Recovery Operation Delta Object</em></a>, composed as follows:<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"patches"</span><span class="token operator">:</span> <span class="token punctuation">[</span> PATCH_<span class="token number">1</span><span class="token punctuation">,</span> PATCH_<span class="token number">2</span><span class="token punctuation">,</span> ... <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"patches"</span><span class="token operator">:</span> <span class="token punctuation">[</span> PATCH_1<span class="token punctuation">,</span> PATCH_2<span class="token punctuation">,</span> ... <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token property">"update_commitment"</span><span class="token operator">:</span> Update Operation Commitment
 <span class="token punctuation">}</span>
 </code></pre>
@@ -1481,10 +1477,6 @@ did:elem:EiD0x0JeWXQbVIpBpyeyF5FDdZN1U7enAfHnd13Qk_CYpQ
 
           </body>
           <script>window.specConfig = {"title":"DIF Sidetree Protocol","logo":"https://rawcdn.githack.com/decentralized-identity/decentralized-identity.github.io/a3ca39717e440302d1fd99a796e7f00e1c42eb2d/images/logo-flat.svg","logo_link":"https://identity.foundation","source":{"host":"github","account":"decentralized-identity","repo":"sidetree"},"output_path":"./www/spec","spec_directory":"./docs/spec/","markdown_paths":["title.md","abstract.md","intro.md","terminology.md","versioning.md","parameters.md","common-functions.md","topology.md","file-structures.md","did-uri.md","json-web-signatures.md","operations.md","patches.md","processing.md","pof.md","resolution.md","method-versioning.md","context.md"],"destination":"./www/spec/","rootResourcePrefix":"./www/","destinationResourcePrefix":"../"}</script>
-          <script src="../spec-up/js/markdown-it.js"></script>
-          <script src="../spec-up/js/prism.js" data-manual></script>
-          <script src="../spec-up/js/mermaid.js"></script>
-          <script src="../spec-up/js/chart.js"></script>
-          <script src="../spec-up/js/index.js"></script>
+          <script src="../spec-up/compiled/body.js" data-manual></script>
         </html>
       
