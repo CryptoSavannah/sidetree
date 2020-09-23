@@ -71,7 +71,7 @@ Sidetree defines <code>published</code>, <code>updateCommitment</code>, and <cod
 <li><code>updateCommitment</code> is the commitement for the next update operation as defined in <a href="https://identity.foundation/sidetree/spec/#commitment-value-generation">commitment value generation</a>.</li>
 <li><code>recoveryCommitment</code> is the commitement for the next recover or deactivate operation as defined in <a href="https://identity.foundation/sidetree/spec/#commitment-value-generation">commitment value generation</a>.</li>
 </ul>
-<div id="example-1" class="notice example"><a class="notice-link" href="#example-1">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div id="example-8" class="notice example"><a class="notice-link" href="#example-8">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"https://www.w3.org/ns/did-resolution/v1"</span><span class="token punctuation">,</span>
     <span class="token property">"didDocument"</span><span class="token operator">:</span> DID_DOCUMENT_OBJECT<span class="token punctuation">,</span>
     <span class="token property">"methodMetadata"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -113,7 +113,7 @@ Sidetree defines <code>published</code>, <code>updateCommitment</code>, and <cod
 </ol>
 <h3 id="sidetree-operations"><a class="toc-anchor" href="#sidetree-operations">§</a> Sidetree Operations</h3>
 <p>Sidetree operation requests to the REST API consist of a type property indicating the operation to be performed along with operation-specific properties and data.</p>
-<div id="example-2" class="notice example"><a class="notice-link" href="#example-2">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div id="example-9" class="notice example"><a class="notice-link" href="#example-9">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"type"</span><span class="token operator">:</span> OPERATION_TYPE<span class="token punctuation">,</span>
     ...
 <span class="token punctuation">}</span>
@@ -132,7 +132,7 @@ Sidetree defines <code>published</code>, <code>updateCommitment</code>, and <cod
 </li>
 </ol>
 <h4 id="create"><a class="toc-anchor" href="#create">§</a> Create</h4>
-<div id="example-3" class="notice example"><a class="notice-link" href="#example-3">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div id="example-10" class="notice example"><a class="notice-link" href="#example-10">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"create"</span><span class="token punctuation">,</span>
     <span class="token property">"suffix_data"</span><span class="token operator">:</span> SUFFIX_DATA_OBJECT<span class="token punctuation">,</span>
     <span class="token property">"delta"</span><span class="token operator">:</span> DELTA_OBJECT
@@ -146,7 +146,7 @@ Sidetree defines <code>published</code>, <code>updateCommitment</code>, and <cod
 <li>The object <strong><strong>MUST</strong></strong> contain an <code>delta</code> property, and its value must be a <code>Base64URL</code> encoded <a href="#create-data-object"><em>Create Operation Data Object</em></a>.</li>
 </ol>
 <h4 id="update"><a class="toc-anchor" href="#update">§</a> Update</h4>
-<div id="example-4" class="notice example"><a class="notice-link" href="#example-4">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div id="example-11" class="notice example"><a class="notice-link" href="#example-11">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"update"</span><span class="token punctuation">,</span>
     <span class="token property">"did_suffix"</span><span class="token operator">:</span> DID_SUFFIX<span class="token punctuation">,</span>
     <span class="token property">"delta"</span><span class="token operator">:</span> DELTA_OBJECT<span class="token punctuation">,</span>
@@ -163,7 +163,7 @@ Sidetree defines <code>published</code>, <code>updateCommitment</code>, and <cod
 as defined in <a href="https://identity.foundation/sidetree/spec/#map-file">Map File</a> for Update operations.</li>
 </ol>
 <h4 id="recover"><a class="toc-anchor" href="#recover">§</a> Recover</h4>
-<div id="example-5" class="notice example"><a class="notice-link" href="#example-5">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div id="example-12" class="notice example"><a class="notice-link" href="#example-12">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"recover"</span><span class="token punctuation">,</span>
     <span class="token property">"did_suffix"</span><span class="token operator">:</span> DID_SUFFIX<span class="token punctuation">,</span>
     <span class="token property">"delta"</span><span class="token operator">:</span> DELTA_OBJECT<span class="token punctuation">,</span>
@@ -180,7 +180,7 @@ as defined in <a href="https://identity.foundation/sidetree/spec/#map-file">Map 
 as defined in <a href="https://identity.foundation/sidetree/spec/#anchor-file">Anchor File</a> for Recovery operations.</li>
 </ol>
 <h4 id="deactivate"><a class="toc-anchor" href="#deactivate">§</a> Deactivate</h4>
-<div id="example-6" class="notice example"><a class="notice-link" href="#example-6">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<div id="example-13" class="notice example"><a class="notice-link" href="#example-13">EXAMPLE</a><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"deactivate"</span><span class="token punctuation">,</span>
     <span class="token property">"did_suffix"</span><span class="token operator">:</span> DID_SUFFIX<span class="token punctuation">,</span>
     <span class="token property">"signed_data"</span><span class="token operator">:</span> JWS_SIGNED_VALUE
